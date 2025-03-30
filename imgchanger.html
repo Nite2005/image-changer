@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Changer</title>
+  <style>
+    body {
+
+      /*background: rgb(2, 0, 36);*/
+      background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(24, 24, 110, 1) 35%, rgba(0, 212, 255, 1) 100%);
+      color: white;
+      padding:50px;
+      text-align: center;
+    }
+
+    .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+    .image-container img {
+      height: 800px ;
+      /*width: 1000px;*/
+      border:20px solid white;
+      border-radius: 20px;
+    }
+    .image-container h2{
+            background-color: yellow;
+            color: black;
+            padding: 10px;
+            font-size:110px;
+            width:600px;
+            border-radius: 10px;
+            border: 1px solid blue;
+        }
+        h1{
+          font-size:90px;
+        }
+  </style>
+</head>
+
+<body>
+  <h1>Image Changer</h1>
+  <div class="image-container">
+    <img src="https://cdn.pixabay.com/photo/2025/03/26/23/15/boy-9495338_1280.jpg" alt="image">
+    <h2>Boy</h2>
+  </div>
+
+
+  <script>
+    let img = document.querySelector('img');
+    let h2 = document.querySelector('h2');
+    let prvsrc = img.src
+    let prevtext = h2.innerText
+
+    img.addEventListener('mouseover',()=>{
+      img.src = 'https://cdn.pixabay.com/photo/2025/03/26/17/07/robin-9494908_1280.jpg'
+      h2.innerText='Bird'
+    })
+    img.addEventListener('mouseleave',()=>{
+      img.src=prvsrc
+      h2.innerText = prevtext
+    })
+  </script>
+</body>
+
+</html>
